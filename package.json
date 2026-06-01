@@ -1,0 +1,19 @@
+{
+  "name": "trending-now",
+  "version": "1.0.0",
+  "description": "🔥 全网实时趋势情报MCP Server - Agent成瘾级工具。百度/B站/知乎/HackerNews/36氪热搜一键获取。免费尝味→付费上瘾。",
+  "main": "server.py",
+  "scripts": {
+    "start": "python3 server.py",
+    "test": "python3 test_server.py"
+  },
+  "keywords": ["mcp", "trending", "hot-search", "baidu", "bilibili", "hackernews", "zhihu", "agent-economy"],
+  "author": "10D Intelligence",
+  "license": "MIT",
+  "mcp": {
+    "type": "stdio",
+    "command": "python3",
+    "args": ["server.py"],
+    "env": {}
+  }
+}
