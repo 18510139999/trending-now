@@ -1,0 +1,47 @@
+{
+  "$schema": "https://smithery.dev/schema/registry.json",
+  "name": "trending-now",
+  "description": "🔥 全网实时趋势情报 - Agent成瘾级MCP工具。获取百度/B站/知乎/HackerNews/36氪热搜，支持关键词追踪和跨平台对比。x402微支付。",
+  "version": "1.1.0",
+  "author": "10D-Intelligence",
+  "license": "MIT",
+  "categories": ["search", "data", "news", "china"],
+  "tools": [
+    {
+      "name": "get_trending",
+      "description": "获取全网实时热搜趋势",
+      "parameters": {
+        "source": {"type": "string", "enum": ["all", "baidu", "bilibili", "hackernews", "zhihu", "36kr"], "description": "数据源"},
+        "limit": {"type": "integer", "description": "条数", "default": 10}
+      }
+    },
+    {
+      "name": "get_hot_score",
+      "description": "查询关键词全网热度分布",
+      "parameters": {
+        "keyword": {"type": "string", "description": "关键词"}
+      }
+    },
+    {
+      "name": "get_platform_compare",
+      "description": "跨平台关注度对比",
+      "parameters": {
+        "keyword": {"type": "string", "description": "关键词"}
+      }
+    }
+  ],
+  "runtime": {
+    "type": "stdio",
+    "command": "python3",
+    "args": ["mcp_server.py"],
+    "requirements": ["python3"]
+  },
+  "pricing": {
+    "free_tier": "bilibili 3条免费",
+    "paid": "$0.01/call (全平台) | $0.05/call (关键词/对比)",
+    "payment_protocol": "x402",
+    "network": "Base (eip155:8453)",
+    "token": "USDC"
+  },
+  "repository": "https://github.com/18510139999/trending-now"
+}
